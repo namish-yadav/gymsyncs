@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#090909" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <title>GymSyncs</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- App shell: header only shows on desktop sidebar layout -->
+  <div class="app">
+
+    <!-- ============ NAVIGATION ============ -->
+    <!-- Same markup serves as bottom tab bar on mobile and left sidebar on desktop -->
+    <nav class="nav" aria-label="Primary">
+      <div class="nav__brand">
+        <span class="nav__logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.5 3v3M6.5 18v3M17.5 3v3M17.5 18v3M2 8.5h20M2 15.5h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <rect x="2" y="8.5" width="20" height="7" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </span>
+        <span class="nav__brand-text">GymSyncs</span>
+      </div>
+
+      <ul class="nav__list" id="navList">
+        <li class="nav__item">
+          <button class="nav__link is-active" data-view="home" type="button">
+            <span class="nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav__label">Home</span>
+          </button>
+        </li>
+        <li class="nav__item">
+          <button class="nav__link" data-view="workout" type="button">
+            <span class="nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 12h2M19.5 12h2M4.5 12h3M16.5 12h3M7.5 8v8M16.5 8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="nav__label">Workout</span>
+          </button>
+        </li>
+        <li class="nav__item">
+          <button class="nav__link" data-view="history" type="button">
+            <span class="nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12a9 9 0 1 0 3-6.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M3 4v4h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 8v4.5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav__label">History</span>
+          </button>
+        </li>
+        <li class="nav__item">
+          <button class="nav__link" data-view="profile" type="button">
+            <span class="nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M4.5 19.5c1.6-3.2 4.4-4.8 7.5-4.8s5.9 1.6 7.5 4.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="nav__label">Profile</span>
+          </button>
+        </li>
+
+        <!-- Signature element: glowing pill that glides to the active tab -->
+        <span class="nav__indicator" id="navIndicator" aria-hidden="true"></span>
+      </ul>
+    </nav>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main" id="main">
+      <div class="view" id="view-home" data-view-panel="home">
+        <div class="placeholder-card fade-in">
+          <h1>Home Dashboard</h1>
+          <p>Arriving in Phase 3.</p>
+        </div>
+      </div>
+
+      <div class="view" id="view-workout" data-view-panel="workout" hidden>
+        <div class="placeholder-card fade-in">
+          <h1>Workout</h1>
+          <p>Arriving in Phase 5.</p>
+        </div>
+      </div>
+
+      <div class="view" id="view-history" data-view-panel="history" hidden>
+        <div class="placeholder-card fade-in">
+          <h1>History</h1>
+          <p>Arriving in Phase 7.</p>
+        </div>
+      </div>
+
+      <div class="view" id="view-profile" data-view-panel="profile" hidden>
+        <div class="placeholder-card fade-in">
+          <h1>Profile</h1>
+          <p>Settings and profile details arrive in a later phase.</p>
+           <!-- Add credits section here -->
+    <div class="credits">
+      <p>&copy; 2026 GymSyncs. All rights reserved.</p>
+      <p>Contact Us: <a href="mailto:nam4sh@gmail.com"><span style="color: #a931ff;">nam4sh@gmail.com</span></a></p>
+   <p>Designed by <span style="color: #a931ff;">Namish Yadav</span></p>
+    </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>
