@@ -108,6 +108,7 @@ assets/screenshots/
 ### Deployment
 
 - Netlify
+- Github Pages
 
 ---
 
