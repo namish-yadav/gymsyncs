@@ -4,12 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#090909" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <title>GymSyncs</title>
-
+  <title>GymSync</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ============ FIRST LAUNCH ============ -->
+  <!-- Shown once, only when no name is saved yet. script.js decides visibility
+       synchronously before first paint, so returning users never see a flash. -->
+  <div class="onboarding" id="onboarding" hidden>
+    <div class="onboarding__card fade-in">
+      <span class="onboarding__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.5 3v3M6.5 18v3M17.5 3v3M17.5 18v3M2 8.5h20M2 15.5h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <rect x="2" y="8.5" width="20" height="7" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </span>
+
+      <h1>Welcome to GymSync</h1>
+      <p>Let&rsquo;s get your profile set up. What should we call you?</p>
+
+      <form id="onboardingForm" class="onboarding__form" novalidate>
+        <label class="onboarding__label" for="nameInput">Your name</label>
+        <input
+          class="onboarding__input"
+          type="text"
+          id="nameInput"
+          name="name"
+          placeholder="e.g. Alex"
+          maxlength="30"
+          autocomplete="name"
+          autofocus
+          required
+        />
+        <button class="onboarding__button" type="submit" id="continueBtn" disabled>
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- App shell: header only shows on desktop sidebar layout -->
   <div class="app">
@@ -24,7 +57,7 @@
             <rect x="2" y="8.5" width="20" height="7" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
           </svg>
         </span>
-        <span class="nav__brand-text">GymSyncs</span>
+        <span class="nav__brand-text">GymSync</span>
       </div>
 
       <ul class="nav__list" id="navList">
@@ -105,12 +138,21 @@
         <div class="placeholder-card fade-in">
           <h1>Profile</h1>
           <p>Settings and profile details arrive in a later phase.</p>
+<<<<<<< HEAD
            <!-- Add credits section here -->
     <div class="credits">
       <p>&copy; 2026 GymSyncs. All rights reserved.</p>
       <p>Contact Us: <a href="mailto:nam4sh@gmail.com"><span style="color: #a931ff;">nam4sh@gmail.com</span></a></p>
    <p>Designed by <a href="https://instagram.com/nam7sh" target="_blank"> <span style="color: #a931ff;">Namish Yadav</span></a></p>
     </div>
+=======
+
+          <div class="credits">
+            <p>&copy; 2026 GymSync. All rights reserved.</p>
+            <p>Contact Us: <a class="credits__link" href="mailto:nam4sh@gmail.com">nam4sh@gmail.com</a></p>
+            <p>Designed by <a href="https://instagram.com/nam7sh" target="_blank" class="credits__link">Namish Yadav</a></p>
+          </div>
+>>>>>>> 01b2cff (Patch v2 added Asking name at the first launch)
         </div>
       </div>
     </main>
@@ -119,6 +161,4 @@
 
   <script src="script.js"></script>
 </body>
-
-
 </html>
