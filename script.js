@@ -226,6 +226,9 @@
     { text: 'Small daily improvements are the key to staggering long-term results.', author: 'Unknown' },
     { text: 'Consistency is what transforms average into excellence.', author: 'Unknown' },
     { text: 'You don\u2019t have to be extreme, just consistent.', author: 'Unknown' },
+    { text: 'Kiraye daar Dhike', author: 'Tushar Bhati' },
+    { text: 'Khurak Mongro Dheeke hai', author: 'Rahul Bhati' },
+    { text: 'Noida hai yu moma', author: 'Gujjar samaj' },
   ];
 
   /** Picks a quote deterministically from the date, so it holds steady all day. */
