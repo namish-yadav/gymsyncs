@@ -114,10 +114,54 @@
     <!-- ============ MAIN CONTENT ============ -->
     <main class="main" id="main">
       <div class="view" id="view-home" data-view-panel="home">
-        <div class="placeholder-card fade-in">
-          <h1>Home Dashboard</h1>
-          <p>Arriving in Phase 3.</p>
-        </div>
+        <!-- Greeting + live date/time -->
+        <header class="dash-header fade-in">
+          <h1 id="greeting">Welcome back</h1>
+          <p class="dash-header__meta">
+            <span id="currentDay">&mdash;</span>
+            <span class="dash-header__dot" aria-hidden="true">&bull;</span>
+            <span id="currentDate">&mdash;</span>
+            <span class="dash-header__dot" aria-hidden="true">&bull;</span>
+            <span id="liveClock" class="stat-number">&mdash;</span>
+          </p>
+        </header>
+
+        <!-- Today's split -->
+        <section class="card split-card fade-in" id="splitCard">
+          <p class="split-card__label">Today&rsquo;s Workout</p>
+          <p class="split-card__name" id="splitName">&mdash;</p>
+          <p class="split-card__sub" id="splitSub">Loading your split&hellip;</p>
+        </section>
+
+        <!-- Quick stats -->
+        <section class="stat-grid fade-in">
+          <div class="card stat-card">
+            <span class="stat-card__icon" aria-hidden="true">🔥</span>
+            <p class="stat-card__value stat-number" id="statStreak">0</p>
+            <p class="stat-card__label">Day Streak</p>
+          </div>
+          <div class="card stat-card">
+            <span class="stat-card__icon" aria-hidden="true">✅</span>
+            <p class="stat-card__value stat-number" id="statCompleted">0/0</p>
+            <p class="stat-card__label">This Week</p>
+          </div>
+          <div class="card stat-card stat-card--wide">
+            <span class="stat-card__icon" aria-hidden="true">🕓</span>
+            <p class="stat-card__value" id="statLastWorkout">No workouts yet</p>
+            <p class="stat-card__label">Last Workout</p>
+          </div>
+        </section>
+
+        <!-- Motivational quote -->
+        <section class="card quote-card fade-in">
+          <p class="quote-card__text" id="quoteText">&mdash;</p>
+          <p class="quote-card__author" id="quoteAuthor"></p>
+        </section>
+
+        <!-- Primary CTA -->
+        <button class="start-workout-btn" id="startWorkoutBtn" type="button">
+          Start Workout
+        </button>
       </div>
 
       <div class="view" id="view-workout" data-view-panel="workout" hidden>

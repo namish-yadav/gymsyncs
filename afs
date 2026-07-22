@@ -1,0 +1,8 @@
+[33md2af861[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: Resolve merge conflict
+[33m45d53f0[m HEAD@{1}: rebase (finish): returning to refs/heads/main
+[33m45d53f0[m HEAD@{2}: rebase (continue): Patch v2 added Asking name at the first launch
+[33m591f983[m HEAD@{3}: pull origin main --rebase (start): checkout 591f98348874660b4549ac887d7850af8ec4e30e
+[33m01b2cff[m HEAD@{4}: commit: Patch v2 added Asking name at the first launch
+[33m5a8b479[m HEAD@{5}: commit: Initial commit
+[33mf83fc8b[m HEAD@{6}: Branch: renamed refs/heads/master to refs/heads/main
+[33mf83fc8b[m HEAD@{8}: commit (initial): first commit

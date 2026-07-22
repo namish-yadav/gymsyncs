@@ -421,6 +421,159 @@ p {
   margin-bottom: var(--space-2);
 }
 
+/* ---------- Home Dashboard ---------- */
+.dash-header {
+  margin-bottom: var(--space-5);
+}
+
+.dash-header__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.dash-header__dot {
+  color: var(--color-text-tertiary);
+  font-size: 0.6rem;
+}
+
+/* Today's split — the hero card of the dashboard */
+.split-card {
+  padding: var(--space-6) var(--space-5);
+  margin-bottom: var(--space-4);
+  text-align: center;
+  background: linear-gradient(160deg, var(--color-card), rgba(94, 53, 177, 0.08));
+}
+
+.split-card__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.split-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.8rem + 2vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-primary-strong);
+  line-height: 1.1;
+}
+
+.split-card__sub {
+  margin-top: var(--space-1);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Rest day gets a calmer, muted treatment instead of the workout accent */
+.split-card.is-rest {
+  background: var(--color-card);
+}
+
+.split-card.is-rest .split-card__name {
+  color: var(--color-text-secondary);
+}
+
+/* Quick stats */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.stat-card {
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.stat-card--wide {
+  grid-column: 1 / -1;
+}
+
+.stat-card__icon {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.stat-card__value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  word-break: break-word;
+}
+
+.stat-card__label {
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Motivational quote */
+.quote-card {
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+  border-left: 3px solid var(--color-primary-strong);
+  border-radius: var(--radius-md);
+}
+
+.quote-card__text {
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.quote-card__author {
+  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+
+/* Primary CTA */
+.start-workout-btn {
+  width: 100%;
+  padding: 18px var(--space-5);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(94, 53, 177, 0.35);
+  transition: background var(--duration-base) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.start-workout-btn:hover {
+  background: var(--color-primary-strong);
+}
+
+.start-workout-btn:active {
+  transform: scale(0.98);
+}
+
+.start-workout-btn.is-rest {
+  background: var(--color-card);
+  color: var(--color-text-secondary);
+  box-shadow: none;
+  border: 1px solid var(--color-border-strong);
+}
+
+.start-workout-btn.is-rest:hover {
+  background: var(--color-card-hover);
+}
+
 /* ---------- Profile credits ---------- */
 .credits {
   margin-top: var(--space-6);
@@ -591,4 +744,4 @@ p {
     max-width: var(--content-max-width);
     margin-inline: auto;
   }
-}
+} 

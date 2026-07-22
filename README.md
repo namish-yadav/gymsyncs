@@ -2,14 +2,19 @@
 
 <div align="center">
 
+<img src="assets/logo.svg" width="120" alt="GymSync Logo">
+
 # GymSync
 
-**A modern, Apple-inspired fitness tracker built with HTML, CSS, and Vanilla JavaScript.**
+### Premium Offline Fitness Tracker
 
-An offline-first workout tracker focused on clean design, performance, and consistency.
+*A modern Apple-inspired fitness tracker built with HTML, CSS & Vanilla JavaScript.*
 
-![Version](https://img.shields.io/badge/version-v2.0-5e35b1?style=for-the-badge)
-![Status](https://img.shields.io/badge/status-Active%20Development-success?style=for-the-badge)
+**Currently in Phase 3**
+
+![Version](https://img.shields.io/badge/version-v0.3.0-4CAF50?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-3-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-Active%20Development-orange?style=for-the-badge)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -20,69 +25,83 @@ An offline-first workout tracker focused on clean design, performance, and consi
 
 # 📖 About
 
-GymSync is my long-term software engineering project that evolves alongside my learning journey throughout my Bachelor of Computer Applications (BCA).
+GymSync is my long-term software engineering project that I'm building throughout my Bachelor of Computer Applications (BCA).
 
-Rather than creating many disconnected tutorial projects, I'm continuously improving one real application while learning modern software engineering principles.
+Instead of creating dozens of disconnected tutorial projects, I chose to continuously improve one real-world application while learning modern software engineering.
 
-The project currently focuses on mastering web fundamentals before expanding into a complete full-stack fitness platform.
+Every phase introduces new features, cleaner architecture, and better coding practices.
+
+The current version is built using only:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Local Storage API
+
+No frameworks. No backend. Just strong fundamentals.
 
 ---
 
-# ✨ Current Features
+# ✨ Features
 
 ## 👋 First Launch Experience
 
-- Welcome onboarding
+- Welcome onboarding screen
 - User name setup
 - Local Storage persistence
-- One-time profile creation
+- Returning users skip onboarding automatically
 
-## 🏠 Home
+---
 
-- Responsive dashboard
-- Apple-inspired interface
-- Mobile & desktop layouts
-- Animated navigation
+## 🏠 Dashboard
+
+- Personalized greeting
+- Live digital clock
+- Current day
+- Current date
+- Today's workout split
+- Motivational quotes
+- Start Workout button
+
+---
+
+## 📊 Dashboard Statistics
+
+- 🔥 Workout streak
+- ✅ Weekly completion
+- 🕒 Last workout
+
+---
 
 ## 🧭 Navigation
 
+- Responsive sidebar (Desktop)
 - Bottom navigation (Mobile)
-- Sidebar navigation (Desktop)
 - Animated active indicator
-- Smooth transitions
+- Smooth page transitions
 
-## 💾 Local Storage
+---
 
-- User profile
-- Persistent onboarding
-- Storage wrapper
-- Offline-first architecture
+## 🎨 User Interface
 
-## 🎨 UI / UX
-
-- Dark theme
+- Apple-inspired design
+- Dark mode
 - Glassmorphism
-- Responsive design
-- Modern animations
-- Rounded cards
-- Accessibility improvements
+- Mobile-first
+- Responsive layout
+- Smooth animations
 
 ---
 
-# 🚧 Currently In Development
+## 💾 Storage
 
-- Home dashboard
-- Live clock
-- Today's workout
-- Workout timer
-- Exercise tracking
-- Workout history
-- Statistics
-- Personal records
+- Local Storage
+- Offline-first
+- Persistent user profile
 
 ---
 
-# 🗓 Workout Split
+# 📅 Workout Split
 
 | Day | Workout |
 |------|----------|
@@ -98,7 +117,7 @@ The project currently focuses on mastering web fundamentals before expanding int
 
 # 📸 Screenshots
 
-Screenshots will be added as the application evolves.
+Screenshots will be added as development progresses.
 
 ```
 assets/screenshots/
@@ -116,13 +135,13 @@ assets/screenshots/
 
 ### Storage
 
-- Local Storage
+- Local Storage API
 
-### Development
+### Tools
 
-- Visual Studio Code
 - Git
 - GitHub
+- VS Code
 
 ### Deployment
 
@@ -137,14 +156,14 @@ assets/screenshots/
 GymSync/
 │
 ├── assets/
+│   ├── logo.svg
 │   ├── images/
-│   ├── screenshots/
-│   └── logo.svg
+│   └── screenshots/
 │
 ├── docs/
 │   ├── CHANGELOG.md
-│   ├── WHY.md
-│   └── LEARNING.md
+│   ├── LEARNING.md
+│   └── WHY.md
 │
 ├── index.html
 ├── style.css
@@ -162,22 +181,20 @@ GymSync/
 Clone the repository
 
 ```bash
-git clone https://github.com/namish-yadav/gymsync.git
+git clone https://github.com/namish-yadav/gymsyncs.git
 ```
 
 Open the project
 
 ```bash
-cd gymsync
+cd gymsyncs
 ```
 
-Run using
-
-- VS Code Live Server
+Run using VS Code Live Server
 
 or simply open
 
-```
+```text
 index.html
 ```
 
@@ -185,69 +202,86 @@ inside your browser.
 
 ---
 
-# ✅ Development Progress
+# 📈 Development Progress
 
-## Phase 1
+## ✅ Phase 1
 
-- [x] Project setup
-- [x] Responsive layout
-- [x] Mobile navigation
-- [x] Desktop sidebar
-- [x] Glassmorphism UI
-- [x] Onboarding screen
-- [x] Local Storage integration
+- Project setup
+- Responsive layout
+- Dark theme
+- Navigation system
 
-## Phase 2
+---
 
-- [x] Improved project architecture
-- [x] Better code organization
-- [ ] Home dashboard
-- [ ] Workout page
-- [ ] Workout timer
-- [ ] Exercise logging
-- [ ] Workout history
+## ✅ Phase 2
+
+- First-launch onboarding
+- User profile setup
+- Local Storage integration
+
+---
+
+## ✅ Phase 3 (Current)
+
+- Personalized dashboard
+- Live clock
+- Current day & date
+- Workout split
+- Dashboard statistics
+- Motivational quotes
+- Improved UI
+- Responsive navigation
+
+---
+
+## 🚧 Next Phase
+
+- Workout logger
+- Exercise tracking
+- Workout timer
+- Rest timer
+- Save completed workouts
 
 ---
 
 # 🛣 Roadmap
 
-### Version 2
+## Phase 4
 
-- Dashboard
-- Workout tracker
-- History
-- Statistics
+- Workout logging
+- Exercise management
+- Workout completion
+- Rest timer
+
+## Phase 5
+
+- Workout history
 - Personal records
+- Statistics dashboard
+- Calendar view
 
-### Version 3
+## Future Releases
 
 - React
-- Component architecture
-- Better state management
-
-### Version 4
-
 - Backend
 - Authentication
-- Database
-- Cloud synchronization
-
-### Future
-
-- Mobile application
-- AI workout assistant
-- Nutrition tracking
-- Smart recommendations
+- Cloud Sync
+- Mobile App
+- Nutrition Tracking
+- AI Workout Coach
+- Smart Analytics
 
 ---
 
-# 🎯 Why GymSync?
+# 🎯 Project Goal
 
-GymSync is more than a fitness tracker.
+GymSync isn't just another gym tracker.
 
-It's my primary learning project where I apply every new concept I learn.
+It's a long-term software engineering project that documents my journey from beginner web developer to full-stack software engineer.
 
-Every feature, refactor, and commit represents another step toward becoming a full-stack software engineer.
+Instead of abandoning projects after learning a concept, I continuously improve one application while learning new technologies.
+
+Every commit represents another step in that journey.
 
 ---
 
@@ -255,31 +289,29 @@ Every feature, refactor, and commit represents another step toward becoming a fu
 
 This is currently a personal learning project.
 
-Suggestions, ideas, and constructive feedback are always appreciated.
+Suggestions, feature requests, and feedback are always welcome.
 
 ---
 
 # 📜 License
 
-Licensed under the MIT License.
+This project is licensed under the MIT License.
 
 ---
 
-# 👨‍💻 Author
+# 👨‍💻 Developer
 
 **Namish Yadav**
 
-- GitHub → https://github.com/namish-yadav
-- LinkedIn → https://www.linkedin.com/in/namish-yadav-639769408/
-- Instagram → https://instagram.com/nam7sh
+- GitHub: https://github.com/namish-yadav
+- LinkedIn: https://www.linkedin.com/in/namish-yadav-639769408/
+- Instagram: https://instagram.com/nam7sh
 
 ---
 
 <div align="center">
 
-## ⭐ Thanks for visiting!
-
-GymSync is built one phase at a time, with every release reflecting new skills, better architecture, and continuous improvement.
+## ⭐ If you like GymSync, consider giving the repository a Star!
 
 **Built with ❤️ using HTML, CSS & Vanilla JavaScript.**
 
