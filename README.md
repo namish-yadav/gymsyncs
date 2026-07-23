@@ -10,10 +10,10 @@
 
 *A modern Apple-inspired fitness tracker built with HTML, CSS & Vanilla JavaScript.*
 
-**Currently in Phase 3**
+**Currently in Phase 4**
 
-![Version](https://img.shields.io/badge/version-v0.3.0-4CAF50?style=for-the-badge)
-![Phase](https://img.shields.io/badge/Phase-3-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v0.4.0-4CAF50?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-4-blue?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-Active%20Development-orange?style=for-the-badge)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -73,6 +73,19 @@ No frameworks. No backend. Just strong fundamentals.
 
 ---
 
+## 🧠 Workout Logic Engine *(New in Phase 4)*
+
+- Automatic weekday → split resolution (Push / Pull / Legs / Rest)
+- Every split now carries a real exercise database — name, target sets, and
+  target rep range for each movement
+- One resolver function (`getTodaysWorkout()`) returns the full day's workout
+  in a single call, so every future screen (Workout, History) pulls from the
+  same source of truth instead of duplicating the logic
+- Dashboard now reflects it live — e.g. *"5 exercises scheduled"* instead of
+  a static label
+
+---
+
 ## 🧭 Navigation
 
 - Responsive sidebar (Desktop)
@@ -103,15 +116,15 @@ No frameworks. No backend. Just strong fundamentals.
 
 # 📅 Workout Split
 
-| Day | Workout |
-|------|----------|
-| Monday | Push |
-| Tuesday | Pull |
-| Wednesday | Legs |
-| Thursday | Push |
-| Friday | Pull |
-| Saturday | Legs |
-| Sunday | Recovery |
+| Day | Workout | Exercises |
+|------|----------|----------|
+| Monday | Push | 5 |
+| Tuesday | Pull | 5 |
+| Wednesday | Legs | 5 |
+| Thursday | Push | 5 |
+| Friday | Pull | 5 |
+| Saturday | Legs | 5 |
+| Sunday | Recovery | — |
 
 ---
 
@@ -221,7 +234,7 @@ inside your browser.
 
 ---
 
-## ✅ Phase 3 (Current)
+## ✅ Phase 3
 
 - Personalized dashboard
 - Live clock
@@ -234,31 +247,53 @@ inside your browser.
 
 ---
 
+## ✅ Phase 4 (Current)
+
+- Automatic workout-split resolution engine
+- Per-split exercise database (sets & rep targets)
+- Single `getTodaysWorkout()` source of truth for later phases
+- Dashboard now shows live exercise counts
+
+---
+
 ## 🚧 Next Phase
 
-- Workout logger
-- Exercise tracking
-- Workout timer
-- Rest timer
-- Save completed workouts
+- Workout screen with live timer
+- Exercise cards with weight/notes input
+- Completed checkboxes & progress bar
+- Finish Workout flow
 
 ---
 
 # 🛣 Roadmap
 
-## Phase 4
+## Phase 5 — Workout Screen
 
-- Workout logging
-- Exercise management
-- Workout completion
-- Rest timer
+- Live timer
+- Exercise cards
+- Weight input & notes
+- Completed checkbox per exercise
+- Progress bar
+- Finish Workout button
 
-## Phase 5
+## Phase 6 — Workout Summary
 
-- Workout history
-- Personal records
-- Statistics dashboard
-- Calendar view
+- Workout duration
+- Exercises completed
+- Calories burned
+- Congratulations screen
+- Persist streak / weekly completion / last workout
+
+## Phase 7 — History
+
+- Past workouts
+- Previous weights & notes
+- Dates & progress over time
+
+## Phase 8 — Polish
+
+- Animation & micro-interaction pass
+- Mobile & performance optimization
 
 ## Future Releases
 

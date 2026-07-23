@@ -192,10 +192,11 @@
   }
 
   /* ------------------------------------------------------------------ *
-   * WORKOUT SPLIT — maps each weekday to its split.
-   * This mapping is the seed for Phase 4 (which will build the full
-   * workout-logic layer on top of it); the dashboard just needs to know
-   * today's split to render itself honestly.
+   * WORKOUT LOGIC (Phase 4)
+   * Two responsibilities: (1) map each weekday to its split, and
+   * (2) map each split to the exercises that make it up. Together these
+   * answer "what is today's workout" — Phase 5's Workout Screen renders
+   * whatever this module returns, rather than owning any of this logic.
    * ------------------------------------------------------------------ */
   const WORKOUT_SPLIT_BY_DAY = [
     'REST', // Sunday
@@ -214,6 +215,48 @@
     return WORKOUT_SPLIT_BY_DAY[date.getDay()];
   }
 
+  /** Exercise definitions per split. targetReps is a range string, not a hard rule. */
+  const EXERCISES_BY_SPLIT = {
+    PUSH: [
+      { id: 'push-01', name: 'Bench Press', targetSets: 4, targetReps: '6-8' },
+      { id: 'push-02', name: 'Overhead Press', targetSets: 3, targetReps: '8-10' },
+      { id: 'push-03', name: 'Incline Dumbbell Press', targetSets: 3, targetReps: '8-12' },
+      { id: 'push-04', name: 'Lateral Raise', targetSets: 3, targetReps: '12-15' },
+      { id: 'push-05', name: 'Tricep Pushdown', targetSets: 3, targetReps: '10-12' },
+    ],
+    PULL: [
+      { id: 'pull-01', name: 'Deadlift', targetSets: 3, targetReps: '5-6' },
+      { id: 'pull-02', name: 'Pull-Ups', targetSets: 3, targetReps: '6-10' },
+      { id: 'pull-03', name: 'Barbell Row', targetSets: 3, targetReps: '8-10' },
+      { id: 'pull-04', name: 'Face Pull', targetSets: 3, targetReps: '12-15' },
+      { id: 'pull-05', name: 'Bicep Curl', targetSets: 3, targetReps: '10-12' },
+    ],
+    LEGS: [
+      { id: 'legs-01', name: 'Back Squat', targetSets: 4, targetReps: '6-8' },
+      { id: 'legs-02', name: 'Romanian Deadlift', targetSets: 3, targetReps: '8-10' },
+      { id: 'legs-03', name: 'Leg Press', targetSets: 3, targetReps: '10-12' },
+      { id: 'legs-04', name: 'Leg Curl', targetSets: 3, targetReps: '10-12' },
+      { id: 'legs-05', name: 'Standing Calf Raise', targetSets: 4, targetReps: '12-15' },
+    ],
+    REST: [],
+  };
+
+  /** @param {string} split @returns {Array} exercise definitions for that split */
+  function getExercisesForSplit(split) {
+    return EXERCISES_BY_SPLIT[split] ?? [];
+  }
+
+  /**
+   * Resolves the full workout for a given date: its split plus that
+   * split's exercises. This is the one function later phases should call
+   * rather than re-deriving split/exercise logic themselves.
+   * @param {Date} [date]
+   */
+  function getTodaysWorkout(date = new Date()) {
+    const split = getTodaySplit(date);
+    return { split, exercises: getExercisesForSplit(split) };
+  }
+
   /* ------------------------------------------------------------------ *
    * DASHBOARD — Home view: greeting, live clock, today's split,
    * quick stats, and the motivational quote.
@@ -226,9 +269,6 @@
     { text: 'Small daily improvements are the key to staggering long-term results.', author: 'Unknown' },
     { text: 'Consistency is what transforms average into excellence.', author: 'Unknown' },
     { text: 'You don\u2019t have to be extreme, just consistent.', author: 'Unknown' },
-    { text: 'Kiraye daar Dhike', author: 'Tushar Bhati' },
-    { text: 'Khurak Mongro Dheeke hai', author: 'Rahul Bhati' },
-    { text: 'Noida hai yu moma', author: 'Gujjar samaj' },
   ];
 
   /** Picks a quote deterministically from the date, so it holds steady all day. */
@@ -283,13 +323,13 @@
 
     /** Renders today's split, with a visually calmer state for rest days. */
     renderSplit(date = new Date()) {
-      const split = getTodaySplit(date);
+      const { split, exercises } = getTodaysWorkout(date);
       const isRest = split === 'REST';
 
       this.els.splitName.textContent = isRest ? 'REST DAY' : split;
       this.els.splitSub.textContent = isRest
         ? 'Recover today \u2014 you\u2019ve earned it.'
-        : 'Today\u2019s scheduled split';
+        : `${exercises.length} exercises scheduled`;
 
       this.els.splitCard.classList.toggle('is-rest', isRest);
       this.els.startWorkoutBtn.classList.toggle('is-rest', isRest);
