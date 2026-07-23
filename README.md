@@ -159,7 +159,7 @@ assets/screenshots/
 ### Deployment
 
 - GitHub Pages
-- Netlify
+- Vercel
 
 ---
 
